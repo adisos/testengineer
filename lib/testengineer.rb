@@ -36,7 +36,7 @@ module TestEngineer
     end
 
     if name.nil?
-      raise Exception, 'TestEngineer#stop_process cannot handle a nil process name'
+      raise ArgumentError, "TestEngineer#stop_process cannot handle a nil process name"
     end
     procs = foreman.send(:running_processes)
     procs.each do |pid, p|
